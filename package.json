@@ -12,5 +12,13 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.0.15",
     "tailwindcss": "^4.0.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdrinaAquino/Proyecto-Final-Adriana.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AdrinaAquino/Proyecto-Final-Adriana/issues"
+  },
+  "homepage": "https://github.com/AdrinaAquino/Proyecto-Final-Adriana#readme"
 }
