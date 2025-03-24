@@ -3,26 +3,30 @@
  * Este bloque de código contiene la funcionalidad principal
  * que define el comportamiento del programa.
  */
-import { stays } from "./stays";
-const principal=document.querySelector("#principal")
-function enviar(datos, indexhtml){
-    stays.forEach(elemento=>{
-        const template=`<div class="flex flex-col items-center ">
-                <div class="w-70 rounded-3xl overflow-hidden">
-                    <img class="object-cover"
+
+import { stays } from "./stays.js";
+
+const principal = document.querySelector("#principal");
+function enviar(datos, indexhtml) {
+    indexhtml.innerHTML = ""
+    datos.forEach((elemento) => {
+        const template = `
+        <div class="w-85 flex flex-col items-center my-3" >
+                <div class=" w-80 h-70 rounded-3xl overflow-hidden">
+                    <img
                         src="${elemento.photo}"
-                        alt="">
+                        alt="" class="w-full h-full object-cover">
                 </div>
-                <div class=" w-70 flex flex-col">
-                    <div class="w-full flex justify-between p-4">
-                        <span>entire apartament</span>
-                        <span>3 beds</span>
-                        <span>4.75</span>
+                <div class=" w-80 flex flex-col items-start px-2">
+                    <div class="w-full flex justify-between">
+                        <span>${elemento.type}</span>
+                        <span>${elemento.beds}</span>
+                        <span>${elemento.rating}</span>
                     </div>
-                    <p class="font-bold"> nice apart</p>
+                    <p class="font-bold"> ${elemento.title}</p>
                 </div>
             </div>`
-    indexhtml.innerHTML+=template
-        })
+        indexhtml.innerHTML += template
+    })
 }
-enviar(stays,principal)
+enviar(stays, principal)

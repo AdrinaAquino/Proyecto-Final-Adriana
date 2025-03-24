@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/styles/output.css">
-    <script src="./src/scripts/main.js" defer></script>
+    <script src="./src/scripts/main.js" defer type="module"></script>
     <title>PROYECTO</title>
 </head>
 
 <body>
-
     <nav class="">
         <img src="./src/images/icons/logo.svg" alt="">
         <div class="flex justify-center items-center my-6 ">
@@ -21,19 +20,21 @@
             </div>
         </div>
     </nav>
+
     <main>
+        <section class="w-3/4 m-auto">
         <header class="flex justify-between px-2 mb-5">
             <h1 class="font-bold">Stays in Finland</h1>
             <div>
                 <span>1 stays</span>
             </div>
         </header>
-        <section id="principal">
-            <div class="flex flex-col items-center ">
-                <div class="w-70 rounded-3xl overflow-hidden">
-                    <img class="object-cover"
-                        src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80"
-                        alt="">
+        <article class="flex flex-wrap justify-center" id="principal">
+            <div class="w-80 flex flex-col items-center" >
+                <div class=" w-70 h-70 rounded-3xl overflow-hidden">
+                    <img
+                        src="https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80"
+                        alt="" class="w-full h-full object-cover">
                 </div>
                 <div class=" w-70 flex flex-col">
                     <div class="w-full flex justify-between p-4">
@@ -44,7 +45,8 @@
                     <p class="font-bold"> nice apart</p>
                 </div>
             </div>
-        </section>
+        </article>
+    </section>
     </main>
 </body>
 
