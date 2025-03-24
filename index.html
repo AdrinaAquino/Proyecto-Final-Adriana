@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,44 @@
     <script src="./src/scripts/main.js" defer></script>
     <title>PROYECTO</title>
 </head>
+
 <body>
-    
-    <nav>
+
+    <nav class="">
         <img src="./src/images/icons/logo.svg" alt="">
-        <div>
-            <div>Add location</div>
-            <div>Add guests</div>
-            <img src="./src/images/icons/search.svg" alt="" class="w-0.5">
+        <div class="flex justify-center items-center my-6 ">
+            <div class="w-68 h-10 flex border-1 rounded-lg divide-x divide-black">
+                <div class="h-full flex items-center px-3.5">Add location</div>
+                <div class="h-full flex items-center px-3.5">Add guests</div>
+                <img src="./src/images/icons/search.svg" alt="" class="w-5 mx-2.5 fill-red-50">
+            </div>
         </div>
     </nav>
+    <main>
+        <header class="flex justify-between px-2 mb-5">
+            <h1 class="font-bold">Stays in Finland</h1>
+            <div>
+                <span>1 stays</span>
+            </div>
+        </header>
+        <section>
+            <div class="flex flex-col items-center ">
+                <div class="w-70 rounded-3xl overflow-hidden">
+                    <img class="object-cover"
+                        src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80"
+                        alt="">
+                </div>
+                <div class=" w-70 flex flex-col">
+                    <div class="w-full flex justify-between">
+                        <span>entire apartament</span>
+                        <span>3 beds</span>
+                        <span>4.75</span>
+                    </div>
+                    <p class="font-bold"> nice apart</p>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
+
 </html>
