@@ -7,7 +7,8 @@
 import { stays } from "./stays.js";
 
 const principal = document.querySelector("#principal");
-
+const modal = document.querySelector("#modal")
+const botonMobile = document.querySelector("#botonMobile")
 
 function enviar(datos, indexhtml) {
     indexhtml.innerHTML = ""
@@ -20,10 +21,10 @@ function enviar(datos, indexhtml) {
                             src="${elemento.photo}"
                             alt="" class="w-full h-full object-cover">
                     </div>
-                    <div class=" w-80 flex flex-col items-start px-2">
+                    <div class=" w-80 flex flex-col items-start px-1">
                         <div class="w-full flex justify-between my-3">
                             <div>
-                            <span class="border rounded-2xl px-1 font-semibold text-sm">SUPERHOST</span>
+                            <span class="border rounded-2xl px-1 font-semibold text-xs">SUPERHOST</span>
                             <span>${elemento.type} .</span>
                             <span>${elemento.beds} beds</span>
                             </div>
@@ -49,7 +50,7 @@ function enviar(datos, indexhtml) {
                         <div class="w-full flex justify-between my-3">
                             <div>
                             <span class="border rounded-2xl px-1 font-semibold text-sm">SUPERHOST</span>
-                            <span>${elemento.type} .</span>
+                            <span>${elemento.type}</span>
                             <span></span>
                             </div>
                             <div class="flex">
@@ -73,7 +74,7 @@ function enviar(datos, indexhtml) {
                     <div class=" w-80 flex flex-col items-start px-2">
                         <div class="w-full flex justify-between my-3">
                         <div>
-                            <span>${elemento.type} .</span>
+                            <span>${elemento.type}</span>
                             <span></span>
                             </div>
                             <div class="flex">
@@ -98,7 +99,7 @@ function enviar(datos, indexhtml) {
                             <div class="w-full flex justify-between my-3">
                             <div>
                                 <span>${elemento.type} .</span>
-                                <span>${elemento.beds}</span>
+                                <span>${elemento.beds} beds</span>
                                 </div>
                                 <div class="flex">
                                     <img src="./src/images/icons/star.svg" alt="" class="w-6">
@@ -115,3 +116,10 @@ function enviar(datos, indexhtml) {
     })
 }
 enviar(stays, principal)
+
+
+function toggleModal() {
+    modal.classList.toggle("show");
+}
+
+botonMobile.addEventListener("click", toggleModal)

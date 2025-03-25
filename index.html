@@ -13,16 +13,16 @@
     <!-- NAV -->
     <nav class="">
         <img src="./src/images/icons/logo.svg" alt="">
+        <!-- boton -->
         <div class="flex justify-center items-center my-6 ">
-            <button
-                class="w-68 h-10 flex shadow-[0px_1px_4px_1px_rgb(0,0,0,0.2)] rounded-lg divide-x divide-gray-200 cursor-pointer">
+            <button class="w-68 h-10 flex shadow-[0px_1px_4px_1px_rgb(0,0,0,0.2)] rounded-lg divide-x divide-gray-200 cursor-pointer" id="botonMobile">
                 <div class="h-full flex items-center px-3.5 text-neutral-300">Add location</div>
                 <div class="h-full flex items-center px-3.5 text-neutral-300">Add guests</div>
                 <img src="./src/images/icons/search.svg" alt="" class="w-5 mx-2.5">
             </button>
         </div>
         <!-- modal -->
-        <div class=" h-150 w-full absolute top-0 z-10 bg-white hidden">
+        <div class=" h-150 w-full absolute top-20 z-10 bg-white hidden" id="modal">
             <div class="font-semibold flex justify-between p-5">
                 <span>Edit your search</span>
                 <button class=" cursor-pointer">X</button>
@@ -78,24 +78,7 @@
                 </div>
             </header>
             <article class="flex flex-wrap justify-center" id="principal">
-                <div class="w-85 flex flex-col items-center my-3">
-                    <div class=" w-80 h-70 rounded-3xl overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80"
-                            alt="" class="w-full h-full object-cover">
-                    </div>
-                    <div class=" w-80 flex flex-col items-start px-2">
-                        <div class="w-full flex justify-between">
-                            <span>${elemento.type}</span>
-                            <span>${elemento.beds}</span>
-                            <div class="flex">
-                                <img src="./src/images/icons/star.svg" alt="" class="w-6">
-                                <span>${elemento.rating}</span>
-                            </div>
-
-                        </div>
-                        <p class="font-bold"> ${elemento.title}</p>
-                    </div>
-                </div>
+                
             </article>
         </section>
     </main>
