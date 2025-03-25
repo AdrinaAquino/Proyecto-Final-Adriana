@@ -22,7 +22,7 @@
             </button>
         </div>
         <!-- modal -->
-        <div class=" h-150 w-full absolute top-0 z-10 bg-white ">
+        <div class=" h-150 w-full absolute top-0 z-10 bg-white hidden">
             <div class="font-semibold flex justify-between p-5">
                 <span>Edit your search</span>
                 <button class=" cursor-pointer">X</button>
@@ -31,24 +31,32 @@
                 class=" w-80 rounded-3xl shadow-[0px_1px_4px_1px_rgb(0,0,0,0.2)] flex flex-col m-auto divide-y divide-gray-200">
                 <div class="flex flex-col p-3">
                     <label for="location">LOCATION</label>
-                    <input type="text" name="location" id="" class="border rounded-sm">
+                    <input type="text" name="loca" id="location" class="shadow rounded-sm px-2">
                 </div>
                 <div class="flex flex-col p-3 my-auto">
                     <label for="guests">GUESTS</label>
-                    <input type="text" name="guests" id="" class="border rounded-sm">
+                    <input type="text" name="gues" id="guests" class="shadow rounded-sm px-2">
                 </div>
             </div>
-            <!-- MAS MENOS -->
+            <!-- MAS+ -MENOS -->
             <div class="h-70">
                 <div class="flex flex-col items-start py-3 m-4">
                     <span class="font-semibold">Adult</span>
                     <span class="text-gray-400 mb-4">ages 18 or above</span>
-                    <div><button class="border px-3 py-1 bg-gray-100 mr-5 rounded-sm">-</button><span>4</span><button class="border px-3 py-1 bg-gray-100 mx-5 rounded-sm">+</button></div>
+                    <div>
+                        <button class="border border-gray-400 px-3 py-1 bg-gray-100 mr-5 rounded-sm cursor-pointer">-</button>
+                        <span>4</span>
+                        <button class="border border-gray-400 px-3 py-1 bg-gray-100 mx-5 rounded-sm cursor-pointer">+</button>
+                    </div>
                 </div>
                 <div class="flex flex-col items-start py-3 m-4">
                     <span class="font-semibold">Chindren</span>
                     <span class="text-gray-400 mb-4">ages 17 or below</span>
-                    <div><button class="border px-3 py-1 bg-gray-100 mr-5 rounded-sm">-</button><span>4</span><button class="border px-3 py-1 bg-gray-100 mx-5 rounded-sm">+</button></div>
+                    <div>
+                        <button class="border border-gray-400 px-3 py-1 bg-gray-100 mr-5 rounded-sm cursor-pointer">-</button>
+                        <span>1</span>
+                        <button class="border border-gray-400 px-3 py-1 bg-gray-100 mx-5 rounded-sm cursor-pointer">+</button>
+                    </div>
                 </div>
             </div>
             <!-- SEARCH -->
@@ -91,7 +99,7 @@
             </article>
         </section>
     </main>
-    
+
 </body>
 
 </html>
