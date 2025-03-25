@@ -12,7 +12,7 @@ const principal = document.querySelector("#principal");
 function enviar(datos, indexhtml) {
     indexhtml.innerHTML = ""
     datos.forEach((elemento) => {
-        if (elemento.superHost === true&& elemento.beds!==null) {
+        if (elemento.superHost === true && elemento.beds !== null) {
             const template = `
         <div class="w-85 flex flex-col items-center my-3" >
                     <div class=" w-80 h-70 rounded-3xl overflow-hidden">
@@ -37,7 +37,7 @@ function enviar(datos, indexhtml) {
                     </div>
                 </div>`
             indexhtml.innerHTML += template
-        }else if(elemento.superHost === true&& elemento.beds===null){
+        } else if (elemento.superHost === true && elemento.beds === null) {
             const template = `
         <div class="w-85 flex flex-col items-center my-3" >
                     <div class=" w-80 h-70 rounded-3xl overflow-hidden">
@@ -62,7 +62,7 @@ function enviar(datos, indexhtml) {
                     </div>
                 </div>`
             indexhtml.innerHTML += template
-        }else if(elemento.beds===null){
+        } else if (elemento.beds === null) {
             const template = `
         <div class="w-85 flex flex-col items-center my-3" >
                     <div class=" w-80 h-70 rounded-3xl overflow-hidden">
@@ -85,8 +85,8 @@ function enviar(datos, indexhtml) {
                         <p class="font-bold"> ${elemento.title}</p>
                     </div>
                 </div>`
-        indexhtml.innerHTML += template
-        }else if (elemento.null!==null){
+            indexhtml.innerHTML += template
+        } else if (elemento.null !== null) {
             const template = `
             <div class="w-85 flex flex-col items-center my-3" >
                         <div class=" w-80 h-70 rounded-3xl overflow-hidden">
@@ -111,7 +111,7 @@ function enviar(datos, indexhtml) {
                     </div>`
             indexhtml.innerHTML += template
         }
-       
+
     })
 }
 enviar(stays, principal)
