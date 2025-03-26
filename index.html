@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,9 @@
         <img src="./src/images/icons/logo.svg" alt="">
         <!-- boton -->
         <div class="flex justify-center items-center my-6 ">
-            <button class="w-68 h-10 flex shadow-[0px_1px_4px_1px_rgb(0,0,0,0.2)] rounded-lg divide-x divide-gray-200 cursor-pointer" id="botonMobile">
+            <button
+                class="w-68 h-10 flex shadow-[0px_1px_4px_1px_rgb(0,0,0,0.2)] rounded-lg divide-x divide-gray-200 cursor-pointer"
+                id="botonMobile">
                 <div class="h-full flex items-center px-3.5 text-neutral-300">Add location</div>
                 <div class="h-full flex items-center px-3.5 text-neutral-300">Add guests</div>
                 <img src="./src/images/icons/search.svg" alt="" class="w-5 mx-2.5">
@@ -37,29 +40,41 @@
                     <input type="text" name="gues" id="guests" class="shadow rounded-sm px-2">
                 </div>
             </div>
+
+            <!-- lista -->
+            <div class="h-70 hidden" id="lista-fitrada">
+                <ul class="flex flex-col items-start py-3 m-4">
+                    <li>Helsinki</li>
+                </ul>
+            </div>
+
             <!-- MAS+ -MENOS -->
-            <div class="h-70">
+            <div class="h-70 hidden" id="mas-menos">
                 <div class="flex flex-col items-start py-3 m-4">
                     <span class="font-semibold">Adult</span>
                     <span class="text-gray-400 mb-4">ages 18 or above</span>
                     <div>
-                        <button class="border border-gray-400 px-3 py-1 bg-gray-100 mr-5 rounded-sm cursor-pointer">-</button>
+                        <button
+                            class="border border-gray-400 px-3 py-1 bg-gray-100 mr-5 rounded-sm cursor-pointer">-</button>
                         <span>4</span>
-                        <button class="border border-gray-400 px-3 py-1 bg-gray-100 mx-5 rounded-sm cursor-pointer">+</button>
+                        <button
+                            class="border border-gray-400 px-3 py-1 bg-gray-100 mx-5 rounded-sm cursor-pointer">+</button>
                     </div>
                 </div>
                 <div class="flex flex-col items-start py-3 m-4">
                     <span class="font-semibold">Chindren</span>
                     <span class="text-gray-400 mb-4">ages 17 or below</span>
                     <div>
-                        <button class="border border-gray-400 px-3 py-1 bg-gray-100 mr-5 rounded-sm cursor-pointer">-</button>
+                        <button
+                            class="border border-gray-400 px-3 py-1 bg-gray-100 mr-5 rounded-sm cursor-pointer">-</button>
                         <span>1</span>
-                        <button class="border border-gray-400 px-3 py-1 bg-gray-100 mx-5 rounded-sm cursor-pointer">+</button>
+                        <button
+                            class="border border-gray-400 px-3 py-1 bg-gray-100 mx-5 rounded-sm cursor-pointer">+</button>
                     </div>
                 </div>
             </div>
             <!-- SEARCH -->
-            <div class="h-20 flex justify-center items-end text-white">
+            <div class="h-20 flex justify-center items-center text-white">
                 <button class="flex px-5 py-2 border rounded-3xl bg-amber-800 cursor-pointer">
                     <img src="./src/images/icons/search.svg" alt="" class="w-5 stroke-amber-50">search</button>
             </div>
@@ -69,7 +84,7 @@
 
     <!-- MAIN -->
     <main id="modal">
-        <section class="w-5/6 m-auto z-0">
+        <section class="w-5/6 m-auto z-0 ">
             <header class="w-full flex justify-between px-0 mb-5">
                 <h1 class="font-bold text-2xl">Stays in Finland</h1>
                 <div>
@@ -77,7 +92,7 @@
                 </div>
             </header>
             <article class="flex flex-wrap justify-center" id="principal">
-                
+
             </article>
         </section>
     </main>

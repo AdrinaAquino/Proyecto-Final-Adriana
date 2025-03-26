@@ -10,7 +10,8 @@ const principal = document.querySelector("#principal");
 const modalContent = document.querySelector("#modal-content")
 const botonMobile = document.querySelector("#botonMobile")
 const closeMobile = document.querySelector("#closeMobile")
-
+const masMenos = document.querySelector("#mas-menos")
+const listaFiltrada = document.querySelector("#lista-fitrada")
 
 function enviar(datos, indexhtml) {
     indexhtml.innerHTML = ""
@@ -124,10 +125,21 @@ function toggleModal() {
     modalContent.classList.toggle("hidden");
 }
 
+
 botonMobile.addEventListener("click", toggleModal)
 closeMobile.addEventListener("click", toggleModal)
+modalContent.addEventListener("click", (e) => {
+    if (e.target.id === "guests") {
+        masMenos.classList.remove("hidden")
+        listaFiltrada.classList.add("hidden")
+    } else if (e.target.id === "location") {
+        listaFiltrada.classList.remove("hidden")
+        masMenos.classList.add("hidden")
+    }
+})
 
 modal.addEventListener("click", (e) => {
+    console.log(modal)
     if (e.target.id !== "modalContent") {
         modalContent.classList.add("hidden");
     }
