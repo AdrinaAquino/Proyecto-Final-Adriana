@@ -7,8 +7,10 @@
 import { stays } from "./stays.js";
 
 const principal = document.querySelector("#principal");
-const modal = document.querySelector("#modal")
+const modalContent = document.querySelector("#modal-content")
 const botonMobile = document.querySelector("#botonMobile")
+const closeMobile = document.querySelector("#closeMobile")
+
 
 function enviar(datos, indexhtml) {
     indexhtml.innerHTML = ""
@@ -119,7 +121,14 @@ enviar(stays, principal)
 
 
 function toggleModal() {
-    modal.classList.toggle("show");
+    modalContent.classList.toggle("hidden");
 }
 
 botonMobile.addEventListener("click", toggleModal)
+closeMobile.addEventListener("click", toggleModal)
+
+modal.addEventListener("click", (e) => {
+    if (e.target.id !== "modalContent") {
+        modalContent.classList.add("hidden");
+    }
+})

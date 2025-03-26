@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,10 +21,10 @@
             </button>
         </div>
         <!-- modal -->
-        <div class=" h-150 w-full absolute top-20 z-10 bg-white hidden" id="modal">
+        <div class=" h-150 w-full absolute top-0 z-10 bg-white hidden" id="modal-content">
             <div class="font-semibold flex justify-between p-5">
                 <span>Edit your search</span>
-                <button class=" cursor-pointer">X</button>
+                <button class="text-3xl cursor-pointer" id="closeMobile">&times;</button>
             </div>
             <div
                 class=" w-80 rounded-3xl shadow-[0px_1px_4px_1px_rgb(0,0,0,0.2)] flex flex-col m-auto divide-y divide-gray-200">
@@ -69,7 +68,7 @@
     </nav>
 
     <!-- MAIN -->
-    <main>
+    <main id="modal">
         <section class="w-5/6 m-auto z-0">
             <header class="w-full flex justify-between px-0 mb-5">
                 <h1 class="font-bold text-2xl">Stays in Finland</h1>
