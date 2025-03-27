@@ -31,10 +31,10 @@
             </div>
             <div
                 class=" w-80 rounded-3xl shadow-[0px_1px_4px_1px_rgb(0,0,0,0.2)] flex flex-col m-auto divide-y divide-gray-200">
-                <div class="flex flex-col p-3">
+                <form autocomplete="off" class="flex flex-col p-3">
                     <label for="location">LOCATION</label>
                     <input type="text" name="locat" placeholder="Add location" id="location" class="shadow rounded-sm px-2">
-                </div>
+                </form>
                 <div class="flex flex-col p-3 my-auto">
                     <label for="guests">GUESTS</label>
                     <input type="text" name="gues" placeholder="Add guests" id="guests" value="0" class="shadow rounded-sm px-2">
@@ -75,7 +75,7 @@
             </div>
             <!-- SEARCH -->
             <div class="h-20 flex justify-center items-center text-white">
-                <button class="flex px-5 py-2 border rounded-3xl bg-amber-800 cursor-pointer">
+                <button class="flex px-5 py-2 border rounded-3xl bg-amber-800 cursor-pointer" id="search">
                     <img src="./src/images/icons/search.svg" alt="" class="w-5 stroke-amber-50">search</button>
             </div>
         </div>

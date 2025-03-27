@@ -15,13 +15,13 @@ const masMenos = document.querySelector("#mas-menos")
 const listaFiltrada = document.querySelector("#lista-fitrada")
 const guests = document.querySelector("#guests")
 const location = document.querySelector("#location")
-const autocompleteResults=document.querySelector("#autocomplete-results")
+const autocompleteResults = document.querySelector("#autocomplete-results")
 const buttonGuestsA = document.querySelector("#button-guestsA")
 const buttonGuestsN = document.querySelector("#button-guestsN")
 const display = document.querySelector("#display")
 const displayN = document.querySelector("#displayN")
 const contaStays = document.querySelector("#conta-stays")
-
+const search = document.querySelector("#search")
 
 
 function enviar(datos, indexhtml) {
@@ -43,10 +43,21 @@ function loadStays(array) {
 }
 loadStays(stays)
 
-// stays.filter()
 
-
-
+search.addEventListener("click", () => {
+    let locationValue = (location.value).toLowerCase();
+    let guestValue = parseInt(guests.value) || 0
+    let listaFiltrada = stays;
+    if (locationValue !== "" && guestValue === 0) {
+        listaFiltrada = stays.filter((e) => e.city.toLowerCase()===locationValue)
+    }else if(locationValue===""&& guestValue>0){
+        listaFiltrada=stays.filter((e)=>e.maxGuests>=guestValue)
+    }else if(locationValue!==""&&guestValue>=0){
+        listaFiltrada=stays.filter((e)=>e.maxGuests>=guestValue && e.city.toLowerCase()===locationValue)
+    }
+enviar(listaFiltrada,principal)
+}
+)
 buttonGuestsA.addEventListener("click", (e) => {
     const currentDisplay = parseInt(display.textContent)
     const currentInputValue = parseInt(guests.value)
@@ -81,7 +92,6 @@ modalContent.addEventListener("click", (e) => {
     }
 })
 modal.addEventListener("click", (e) => {
-    console.log(modal)
     if (e.target.id !== "modalContent") {
         modalContent.classList.add("hidden");
     }
