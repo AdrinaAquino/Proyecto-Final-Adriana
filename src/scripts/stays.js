@@ -170,3 +170,6 @@ export const stays = [
     }
 ]
 
+export const lugares=stays.map(e=>{
+    return `${e.city},${e.country}`
+})

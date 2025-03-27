@@ -4,7 +4,7 @@
  * que define el comportamiento del programa.
  */
 
-import { stays } from "./stays.js";
+import { stays, lugares} from "./stays.js";
 import { datosCondicionados } from "./utils.js";
 
 const principal = document.querySelector("#principal");
@@ -22,6 +22,7 @@ const display = document.querySelector("#display")
 const displayN = document.querySelector("#displayN")
 const contaStays = document.querySelector("#conta-stays")
 const search = document.querySelector("#search")
+const lugar = document.querySelector("#lugar")
 
 
 function enviar(datos, indexhtml) {
@@ -37,27 +38,40 @@ function toggleModal() {
     modalContent.classList.toggle("hidden");
 }
 
-function loadStays(array) {
-    let contador = array.length;
-    contaStays.textContent = contador >= 12 ? 12 + "+" : contador
-}
-loadStays(stays)
+contaStays.textContent = stays.length >= 12 ? 12 + "+" : stays.length
 
+const lugaresSinRepetir=lugares.reduce((a,v)=>{
+    if(!a.includes(v)){
+        a.push(v);
+    }
+    return a
+},[]);
+
+function enviarLista(datos,ul){
+    ul.innerHTML=""
+    datos.forEach((e)=>{
+        const template=`<li id="lugar">${e}</li>`
+    ul.innerHTML+=template
+    })
+}
+
+enviarLista(lugaresSinRepetir,autocompleteResults)
 
 search.addEventListener("click", () => {
     let locationValue = (location.value).toLowerCase();
     let guestValue = parseInt(guests.value) || 0
     let listaFiltrada = stays;
     if (locationValue !== "" && guestValue === 0) {
-        listaFiltrada = stays.filter((e) => e.city.toLowerCase()===locationValue)
-    }else if(locationValue===""&& guestValue>0){
-        listaFiltrada=stays.filter((e)=>e.maxGuests>=guestValue)
-    }else if(locationValue!==""&&guestValue>=0){
-        listaFiltrada=stays.filter((e)=>e.maxGuests>=guestValue && e.city.toLowerCase()===locationValue)
+        listaFiltrada = stays.filter((e) => e.city.toLowerCase() === locationValue)
+    } else if (locationValue === "" && guestValue > 0) {
+        listaFiltrada = stays.filter((e) => e.maxGuests >= guestValue)
+    } else if (locationValue !== "" && guestValue >= 0) {
+        listaFiltrada = stays.filter((e) => e.maxGuests >= guestValue && e.city.toLowerCase() === locationValue)
     }
-enviar(listaFiltrada,principal)
-}
-)
+    contaStays.textContent = listaFiltrada.length >= 12 ? 12 + "+" : listaFiltrada.length
+    enviar(listaFiltrada, principal)
+})
+
 buttonGuestsA.addEventListener("click", (e) => {
     const currentDisplay = parseInt(display.textContent)
     const currentInputValue = parseInt(guests.value)
@@ -91,8 +105,14 @@ modalContent.addEventListener("click", (e) => {
         masMenos.classList.add("hidden")
     }
 })
+
 modal.addEventListener("click", (e) => {
     if (e.target.id !== "modalContent") {
         modalContent.classList.add("hidden");
     }
+})
+
+lugar.addEventListener("click",(e)=>{
+    location.value=e.value
+    console.log(e.value)
 })
