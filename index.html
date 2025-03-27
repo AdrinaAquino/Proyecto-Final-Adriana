@@ -33,7 +33,7 @@
                 class=" w-80 rounded-3xl shadow-[0px_1px_4px_1px_rgb(0,0,0,0.2)] flex flex-col m-auto divide-y divide-gray-200">
                 <div class="flex flex-col p-3">
                     <label for="location">LOCATION</label>
-                    <input type="text" name="locat" id="location"  class="shadow rounded-sm px-2">
+                    <input type="text" name="locat" id="location" class="shadow rounded-sm px-2">
                 </div>
                 <div class="flex flex-col p-3 my-auto">
                     <label for="guests">GUESTS</label>
@@ -53,23 +53,23 @@
                 <div class="flex flex-col items-start py-3 m-4">
                     <span class="font-semibold">Adult</span>
                     <span class="text-gray-400 mb-4">ages 18 or above</span>
-                    <div>
-                        <button
-                            class="border border-gray-400 px-3 py-1 bg-gray-100 mr-5 rounded-sm cursor-pointer">-</button>
-                        <span>4</span>
-                        <button
-                            class="border border-gray-400 px-3 py-1 bg-gray-100 mx-5 rounded-sm cursor-pointer">+</button>
+                    <div id="button-guestsA">
+                        <button class="border border-gray-400 px-3 py-1 bg-gray-100 mr-5 rounded-sm cursor-pointer"
+                            id="a-">-</button>
+                        <span id="display">0</span>
+                        <button class="border border-gray-400 px-3 py-1 bg-gray-100 mx-5 rounded-sm cursor-pointer"
+                            id="a+">+</button>
                     </div>
                 </div>
                 <div class="flex flex-col items-start py-3 m-4">
                     <span class="font-semibold">Chindren</span>
                     <span class="text-gray-400 mb-4">ages 17 or below</span>
-                    <div>
-                        <button
-                            class="border border-gray-400 px-3 py-1 bg-gray-100 mr-5 rounded-sm cursor-pointer">-</button>
-                        <span>1</span>
-                        <button
-                            class="border border-gray-400 px-3 py-1 bg-gray-100 mx-5 rounded-sm cursor-pointer">+</button>
+                    <div id="button-guestsN">
+                        <button class="border border-gray-400 px-3 py-1 bg-gray-100 mr-5 rounded-sm cursor-pointer"
+                            id="n-">-</button>
+                        <span id="displayN">0</span>
+                        <button class="border border-gray-400 px-3 py-1 bg-gray-100 mx-5 rounded-sm cursor-pointer"
+                            id="n+">+</button>
                     </div>
                 </div>
             </div>
@@ -88,11 +88,11 @@
             <header class="w-full flex justify-between px-0 mb-5">
                 <h1 class="font-bold text-2xl">Stays in Finland</h1>
                 <div>
-                    <span>1 stays</span>
+                    <p><span id="conta-stays">1</span>stays</p>
                 </div>
             </header>
             <article class="flex flex-wrap justify-center" id="principal">
-
+                <!-- datos desde js -->
             </article>
         </section>
     </main>
