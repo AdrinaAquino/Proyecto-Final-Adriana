@@ -14,11 +14,15 @@ const closeMobile = document.querySelector("#closeMobile")
 const masMenos = document.querySelector("#mas-menos")
 const listaFiltrada = document.querySelector("#lista-fitrada")
 const guests = document.querySelector("#guests")
+const location = document.querySelector("#location")
+const autocompleteResults=document.querySelector("#autocomplete-results")
 const buttonGuestsA = document.querySelector("#button-guestsA")
 const buttonGuestsN = document.querySelector("#button-guestsN")
 const display = document.querySelector("#display")
 const displayN = document.querySelector("#displayN")
 const contaStays = document.querySelector("#conta-stays")
+
+
 
 function enviar(datos, indexhtml) {
     indexhtml.innerHTML = ""
