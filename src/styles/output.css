@@ -11,6 +11,7 @@
     --color-amber-50: oklch(0.987 0.022 95.277);
     --color-amber-800: oklch(0.473 0.137 46.201);
     --color-blue-700: oklch(0.488 0.243 264.376);
+    --color-rose-700: oklch(0.514 0.222 16.935);
     --color-gray-100: oklch(0.967 0.003 264.542);
     --color-gray-200: oklch(0.928 0.006 264.531);
     --color-gray-300: oklch(0.872 0.01 258.338);
@@ -590,6 +591,13 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-red-500);
+      }
+    }
+  }
+  .hover\:bg-rose-700 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-rose-700);
       }
     }
   }

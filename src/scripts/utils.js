@@ -5,7 +5,7 @@
  */
 
 
-export function datosCondicionados(elemento){
+export function datosCondicionados(elemento) {
     if (elemento.superHost === true && elemento.beds !== null) {
         const template = `
     <div class="w-85 flex flex-col items-center my-3" >
@@ -30,7 +30,7 @@ export function datosCondicionados(elemento){
                     <p class="font-bold"> ${elemento.title}</p>
                 </div>
             </div>`
-       return template
+        return template
     } else if (elemento.superHost === true && elemento.beds === null) {
         const template = `
     <div class="w-85 flex flex-col items-center my-3" >
@@ -55,7 +55,7 @@ export function datosCondicionados(elemento){
                     <p class="font-bold"> ${elemento.title}</p>
                 </div>
             </div>`
-       return template
+        return template
     } else if (elemento.beds === null) {
         const template = `
     <div class="w-85 flex flex-col items-center my-3" >
@@ -79,7 +79,7 @@ export function datosCondicionados(elemento){
                     <p class="font-bold"> ${elemento.title}</p>
                 </div>
             </div>`
-       return template
+        return template
     } else if (elemento.null !== null) {
         const template = `
         <div class="w-85 flex flex-col items-center my-3" >
