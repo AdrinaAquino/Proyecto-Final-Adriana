@@ -8,13 +8,13 @@
 export function datosCondicionados(elemento) {
     if (elemento.superHost === true && elemento.beds !== null) {
         const template = `
-    <div class="w-85 flex flex-col items-center my-3" >
-                <div class=" w-80 h-70 rounded-3xl overflow-hidden">
+    <div class="w-95 flex flex-col items-center my-3" >
+                <div class=" w-90 h-70 rounded-3xl overflow-hidden">
                     <img
                         src="${elemento.photo}"
                         alt="" class="w-full h-full object-cover">
                 </div>
-                <div class=" w-80 flex flex-col items-start px-1">
+                <div class=" w-90 flex flex-col items-start px-1">
                     <div class="w-full flex justify-between my-3">
                         <div>
                         <span class="border rounded-2xl px-1 font-semibold text-xs">SUPERHOST</span>
@@ -27,19 +27,19 @@ export function datosCondicionados(elemento) {
                         </div>
                         
                     </div>
-                    <p class="font-bold"> ${elemento.title}</p>
+                    <p class="font-bold text-sm"> ${elemento.title}</p>
                 </div>
             </div>`
         return template
     } else if (elemento.superHost === true && elemento.beds === null) {
         const template = `
-    <div class="w-85 flex flex-col items-center my-3" >
-                <div class=" w-80 h-70 rounded-3xl overflow-hidden">
+    <div class="w-95 flex flex-col items-center my-3" >
+                <div class=" w-90 h-70 rounded-3xl overflow-hidden">
                     <img
                         src="${elemento.photo}"
                         alt="" class="w-full h-full object-cover">
                 </div>
-                <div class=" w-80 flex flex-col items-start px-2">
+                <div class=" w-90 flex flex-col items-start px-2">
                     <div class="w-full flex justify-between my-3">
                         <div>
                         <span class="border rounded-2xl px-1 font-semibold text-sm">SUPERHOST</span>
@@ -52,19 +52,19 @@ export function datosCondicionados(elemento) {
                         </div>
                         
                     </div>
-                    <p class="font-bold"> ${elemento.title}</p>
+                    <p class="font-bold text-sm"> ${elemento.title}</p>
                 </div>
             </div>`
         return template
     } else if (elemento.beds === null) {
         const template = `
-    <div class="w-85 flex flex-col items-center my-3" >
-                <div class=" w-80 h-70 rounded-3xl overflow-hidden">
+    <div class="w-95 flex flex-col items-center my-3" >
+                <div class=" w-90 h-70 rounded-3xl overflow-hidden">
                     <img
                         src="${elemento.photo}"
                         alt="" class="w-full h-full object-cover">
                 </div>
-                <div class=" w-80 flex flex-col items-start px-2">
+                <div class=" w-90 flex flex-col items-start px-2">
                     <div class="w-full flex justify-between my-3">
                     <div>
                         <span>${elemento.type}</span>
@@ -76,19 +76,19 @@ export function datosCondicionados(elemento) {
                         </div>
                         
                     </div>
-                    <p class="font-bold"> ${elemento.title}</p>
+                    <p class="font-bold text-sm"> ${elemento.title}</p>
                 </div>
             </div>`
         return template
     } else if (elemento.null !== null) {
         const template = `
-        <div class="w-85 flex flex-col items-center my-3" >
-                    <div class=" w-80 h-70 rounded-3xl overflow-hidden">
+        <div class="w-95 flex flex-col items-center my-3" >
+                    <div class=" w-90 h-70 rounded-3xl overflow-hidden">
                         <img
                             src="${elemento.photo}"
                             alt="" class="w-full h-full object-cover">
                     </div>
-                    <div class=" w-80 flex flex-col items-start px-2">
+                    <div class=" w-90 flex flex-col items-start px-2">
                         <div class="w-full flex justify-between my-3">
                         <div>
                             <span>${elemento.type} .</span>
@@ -100,7 +100,7 @@ export function datosCondicionados(elemento) {
                             </div>
                             
                         </div>
-                        <p class="font-bold"> ${elemento.title}</p>
+                        <p class="font-bold text-sm"> ${elemento.title}</p>
                     </div>
                 </div>`
         return template
