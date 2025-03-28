@@ -11,12 +11,12 @@
 
 <body>
     <!-- NAV -->
-    <nav class="">
+    <nav class="md:flex justify-between items-center">
         <img src="./src/images/icons/logo.svg" alt="">
         <!-- boton -->
-        <div class="flex justify-center items-center my-6 ">
+        <div class="flex justify-center my-6 md:mx-5 md:my-4">
             <button
-                class="w-68 h-10 flex shadow-[0px_1px_4px_1px_rgb(0,0,0,0.2)] rounded-lg divide-x divide-gray-200 cursor-pointer"
+                class="w-68 h-10 flex shadow-[0px_1px_4px_1px_rgb(0,0,0,0.2)] rounded-lg divide-x divide-gray-200 cursor-pointer "
                 id="botonMobile">
                 <div class="h-full flex items-center px-3.5 text-neutral-300">Add location</div>
                 <div class="h-full flex items-center px-3.5 text-neutral-300">Add guests</div>
@@ -24,44 +24,52 @@
             </button>
         </div>
         <!-- modal contenido-->
-        <div class=" h-150 w-full absolute top-0 z-10 bg-white hidden" id="modal-content">
+        <div class=" h-150 w-full absolute top-0 z-10 bg-white hidden md:h-85" id="modal-content">
             <div class="font-semibold flex justify-between p-5">
-                <span>Edit your search</span>
-                <button class="text-3xl cursor-pointer" id="closeMobile">&times;</button>
+                <span class="md:hidden">Edit your search</span>
+                <button class="text-3xl cursor-pointer md:hidden" id="closeMobile">&times;</button>
             </div>
             <div
-                class=" w-80 rounded-3xl shadow-[0px_1px_4px_1px_rgb(0,0,0,0.2)] flex flex-col m-auto divide-y divide-gray-200">
-                <form autocomplete="off" class="flex flex-col p-3">
+                class=" w-80 rounded-3xl shadow-[0px_1px_4px_1px_rgb(0,0,0,0.2)] flex flex-col m-auto md:flex-row md:w-3/4 md:items-center md:divide-x md:divide-gray-200">
+                <div class="flex flex-col p-3 md:w-1/3 border-b-1 border-b-gray-200 md:border-b-0">
                     <label for="location">LOCATION</label>
-                    <input type="text" name="locat" placeholder="Add location" id="location" class="shadow rounded-sm px-2">
-                </form>
-                <div class="flex flex-col p-3 my-auto">
+                    <input type="text" name="locat" placeholder="Add location" id="location"
+                        class="shadow rounded-sm px-2">
+                </div>
+                <div class="flex flex-col p-3 md:w-1/3">
                     <label for="guests">GUESTS</label>
-                    <input type="text" name="gues" placeholder="Add guests" id="guests" value="0" class="shadow rounded-sm px-2">
+                    <input type="text" name="gues" placeholder="Add guests" id="guests" value="0"
+                        class="shadow rounded-sm px-2">
+                </div>
+                <!-- SEARCH -->
+                <div
+                    class=" absolute bottom-10 right-1/2 translate-1/2 text-white md:h-full md:static md:translate-0 md:flex md:justify-center md:items-center md:text-white md:w-1/3">
+                    <button class="flex px-5 py-2 border rounded-3xl bg-red-700 cursor-pointer" id="search">
+                        <img class="w-5 md:stroke-white" src="./src/images/icons/search.svg" alt="">search</button>
                 </div>
             </div>
 
             <!-- lista -->
-            <div class="h-70 hidden" id="lista-fitrada">
+            <div class="h-70 hidden md:h-50" id="lista-fitrada">
                 <ul class="flex flex-col items-start py-3 m-4" id="autocomplete-results">
                     <li id="lugar">Helsinki</li>
                 </ul>
             </div>
 
             <!-- MAS+ -MENOS -->
-            <div class="h-70 hidden" id="mas-menos">
-                <div class="flex flex-col items-start py-3 m-4">
+            <div class="h-70 hidden md:h-50" id="mas-menos">
+                <div class="flex flex-col items-start py-3 m-4 md:m-2 md:py-0 px-3">
                     <span class="font-semibold">Adult</span>
                     <span class="text-gray-400 mb-4">ages 18 or above</span>
                     <div id="button-guestsA">
-                        <button class="border border-gray-400 px-3 py-1 bg-gray-100 mr-5 rounded-sm cursor-pointer"
+                        <button class="border border-gray-400 px-3 py-1 bg-gray-100 mr-5 rounded-sm cursor-pointer md:"
                             id="a-">-</button>
                         <span id="display">0</span>
-                        <button class="border border-gray-400 px-3 py-1 bg-gray-100 mx-5 rounded-sm cursor-pointer"
+                        <button class="border border-gray-400 px-3 py-1 bg-gray-100 mx-5 rounded-sm cursor-pointer md:"
                             id="a+">+</button>
                     </div>
                 </div>
-                <div class="flex flex-col items-start py-3 m-4">
+                <div class="flex flex-col items-start py-3 m-4 md:m-2 md:py-0 px-3">
                     <span class="font-semibold">Chindren</span>
                     <span class="text-gray-400 mb-4">ages 17 or below</span>
                     <div id="button-guestsN">
@@ -73,19 +81,14 @@
                     </div>
                 </div>
             </div>
-            <!-- SEARCH -->
-            <div class="h-20 flex justify-center items-center text-white">
-                <button class="flex px-5 py-2 border rounded-3xl bg-amber-800 cursor-pointer" id="search">
-                    <img src="./src/images/icons/search.svg" alt="" class="w-5 stroke-amber-50">search</button>
-            </div>
         </div>
 
     </nav>
 
     <!-- MAIN -->
     <main id="modal">
-        <section class="w-5/6 m-auto z-0 ">
-            <header class="w-full flex justify-between px-0 mb-5">
+        <section class="w-5/6 m-auto z-0">
+            <header class="w-full flex justify-between px-0 mb-5 md:w-3/4 md:m-auto">
                 <h1 class="font-bold text-2xl">Stays in Finland</h1>
                 <div>
                     <p><span id="conta-stays">1</span> stays</p>

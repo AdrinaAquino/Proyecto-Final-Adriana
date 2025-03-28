@@ -4,7 +4,7 @@
  * que define el comportamiento del programa.
  */
 
-import { stays, lugares} from "./stays.js";
+import { stays, lugares } from "./stays.js";
 import { datosCondicionados } from "./utils.js";
 
 const principal = document.querySelector("#principal");
@@ -40,25 +40,26 @@ function toggleModal() {
 
 contaStays.textContent = stays.length >= 12 ? 12 + "+" : stays.length
 
-const lugaresSinRepetir=lugares.reduce((a,v)=>{
-    if(!a.includes(v)){
+const lugaresSinRepetir = lugares.reduce((a, v) => {
+    if (!a.includes(v)) {
         a.push(v);
     }
     return a
-},[]);
+}, []);
 
-function enviarLista(datos,ul){
-    ul.innerHTML=""
-    datos.forEach((e)=>{
-        const template=`<li id="lugar">${e}</li>`
-    ul.innerHTML+=template
+function enviarLista(datos, ul) {
+    ul.innerHTML = ""
+    datos.forEach((e) => {
+        const template = `<li id="lugar">${e}</li>`
+        ul.innerHTML += template
     })
 }
 
-enviarLista(lugaresSinRepetir,autocompleteResults)
+enviarLista(lugaresSinRepetir, autocompleteResults)
 
 search.addEventListener("click", () => {
-    let locationValue = (location.value).toLowerCase();
+    let locationValue = (location.value).toLowerCase().split(",")
+    [0];
     let guestValue = parseInt(guests.value) || 0
     let listaFiltrada = stays;
     if (locationValue !== "" && guestValue === 0) {
@@ -112,7 +113,7 @@ modal.addEventListener("click", (e) => {
     }
 })
 
-lugar.addEventListener("click",(e)=>{
-    location.value=e.value
+lugar.addEventListener("click", (e) => {
+    location.value = e.value
     console.log(e.value)
 })

@@ -1,5 +1,6 @@
 @import "tailwindcss";
-.show {
-    display: block;
+@media (max-width: 768px) {
+  #tamaSearch {
+    display: none;
   }
-  
+}
