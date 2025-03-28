@@ -267,6 +267,9 @@
   .h-full {
     height: 100%;
   }
+  .h-screen {
+    height: 100vh;
+  }
   .w-5 {
     width: calc(var(--spacing) * 5);
   }
@@ -418,6 +421,9 @@
   }
   .border-b-gray-800 {
     border-bottom-color: var(--color-gray-800);
+  }
+  .bg-\[\#eb5757\] {
+    background-color: #eb5757;
   }
   .bg-amber-800 {
     background-color: var(--color-amber-800);

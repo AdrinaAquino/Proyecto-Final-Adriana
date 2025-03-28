@@ -44,14 +44,18 @@
                 <!-- SEARCH -->
                 <div
                     class=" absolute bottom-10 right-1/2 translate-1/2 text-white md:h-full md:static md:translate-0 md:flex md:justify-center md:items-center md:text-white md:w-1/3">
-                    <button class="flex px-5 py-2 border rounded-3xl bg-red-700 cursor-pointer" id="search">
-                        <img class="w-5 md:stroke-white" src="./src/images/icons/search.svg" alt="">search</button>
+                    <button class="flex px-5 py-2 border rounded-3xl bg-[#eb5757] cursor-pointer" id="search">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="white" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>search</button>
                 </div>
             </div>
 
             <!-- lista -->
             <div class="h-70 hidden md:h-50" id="lista-fitrada">
-                <ul class="flex flex-col items-start py-3 m-4" id="autocomplete-results">
+                <ul class="flex flex-col items-start py-3 m-4 cursor-pointer" id="autocomplete-results">
                     <li>Helsinki</li>
                 </ul>
             </div>
@@ -82,11 +86,10 @@
                 </div>
             </div>
         </div>
-
     </nav>
 
     <!-- MAIN -->
-    <main id="modal">
+    <main id="modal" class="h-screen">
         <section class="w-5/6 m-auto z-0">
             <header class="w-full flex justify-between px-0 mb-5 md:w-3/4 md:m-auto">
                 <h1 class="font-bold text-2xl">Stays in Finland</h1>

@@ -54,7 +54,6 @@ function enviarLista(datos, ul) {
         ul.innerHTML += template
     })
 }
-
 enviarLista(lugaresSinRepetir, autocompleteResults)
 
 search.addEventListener("click", () => {
@@ -115,8 +114,8 @@ modal.addEventListener("click", (e) => {
 
 autocompleteResults.addEventListener("click", (e) => {
     console.log(e.target)
-    if (e.target === "LI") {
-        location.value = e.target.value
-        
+    if (e.target.tagName === "LI") {
+        location.value = e.target.textContent
+        listaFiltrada.classList.toggle("hidden")
     }
 })
