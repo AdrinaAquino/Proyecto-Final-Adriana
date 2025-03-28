@@ -36,6 +36,7 @@ enviar(stays, principal)
 
 function toggleModal() {
     modalContent.classList.toggle("hidden");
+    modal.classList.add("opacity-35")
 }
 
 contaStays.textContent = stays.length >= 12 ? 12 + "+" : stays.length
@@ -50,7 +51,7 @@ const lugaresSinRepetir = lugares.reduce((a, v) => {
 function enviarLista(datos, ul) {
     ul.innerHTML = ""
     datos.forEach((e) => {
-        const template = `<li>${e}</li>`
+        const template = `<li class="m-2 hover:text-blue-700 flex"><img src="./src/images/icons/ubi.png" class="w-6">${e}</li>`
         ul.innerHTML += template
     })
 }
@@ -95,20 +96,26 @@ buttonGuestsN.addEventListener("click", (e) => {
     }
 })
 botonMobile.addEventListener("click", toggleModal)
-closeMobile.addEventListener("click", toggleModal)
+closeMobile.addEventListener("click", () => {
+    modalContent.classList.toggle("hidden");
+    modal.classList.remove("opacity-35")
+})
 modalContent.addEventListener("click", (e) => {
+
     if (e.target.id === "guests") {
         masMenos.classList.remove("hidden")
         listaFiltrada.classList.add("hidden")
     } else if (e.target.id === "location") {
         listaFiltrada.classList.remove("hidden")
         masMenos.classList.add("hidden")
+
     }
 })
 
 modal.addEventListener("click", (e) => {
     if (e.target.id !== "modalContent") {
         modalContent.classList.add("hidden");
+        modal.classList.remove("opacity-35")
     }
 })
 
