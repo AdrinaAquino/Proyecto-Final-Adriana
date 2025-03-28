@@ -22,7 +22,7 @@ const display = document.querySelector("#display")
 const displayN = document.querySelector("#displayN")
 const contaStays = document.querySelector("#conta-stays")
 const search = document.querySelector("#search")
-const lugar = document.querySelector("#lugar")
+
 
 
 function enviar(datos, indexhtml) {
@@ -50,7 +50,7 @@ const lugaresSinRepetir = lugares.reduce((a, v) => {
 function enviarLista(datos, ul) {
     ul.innerHTML = ""
     datos.forEach((e) => {
-        const template = `<li id="lugar">${e}</li>`
+        const template = `<li>${e}</li>`
         ul.innerHTML += template
     })
 }
@@ -113,7 +113,10 @@ modal.addEventListener("click", (e) => {
     }
 })
 
-lugar.addEventListener("click", (e) => {
-    location.value = e.value
-    console.log(e.value)
+autocompleteResults.addEventListener("click", (e) => {
+    console.log(e.target)
+    if (e.target === "LI") {
+        location.value = e.target.value
+        
+    }
 })
